@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+.sidenav {
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    bottom: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    font-size: 30px;
+    color: #00477e;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #808080;
+}
+
+.main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+     /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+ <title>Nayan's Files</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Cookie|Lobster|Satisfy" rel="stylesheet">
+</head>
+ <body>
+<div class="sidenav">
+
+  <h3><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">Login</a></h3>
+  <h3><a href="#top">Jump to top</a></h3>
+  <h3><a href="#bottom">Jump to last</a></h3>
+  <h3><a href="http://127.0.0.1:8000/signup/">Signup</a></h3>
+
+</div>
+        <div>
+            <center>
+            <h1><a href="#top">Nayan's Filessss Online!</a></h1>
+             </center>
+            <hr width="500" style="border: 2px dashed #C0C0C0" color="#FFFFFF" size="6">
+        {% for post in posts %}
+            <div>
+                <center>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p><b>published: {{ post.published_date }}</b></p>
+                </center>
+                <h2><p>{{ post.text|linebreaksbr }}</p></h2>
+                <hr width="400" style="border: 2px dashed #C0C0C0" color="#FFFFFF" size="6">
+            </div>
+        {% endfor %}
+            <center>
+                <h1><a href="#bottom">End</a></h1>
+            </center>
+        </div>
+    </body>
+            <hr width="400" style="border: 2px dashed #C0C0C0" color="#FFFFFF" size="6">
+            
+</html>

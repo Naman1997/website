@@ -1,0 +1,22 @@
+{% load staticfiles %}
+h1 a {
+    color: #FCA205;
+    font-family: 'Satisfy';
+    text-align: justify-all;
+    box-sizing: border-box;
+}
+
+body {
+    padding-left: 300px;
+    padding-right: 50px;
+    box-sizing: border-box;
+
+
+}
+h2 {
+	font-family: 'Cookie';
+}
+
+h3 a{
+	font-family: 'Lobster'
+}
